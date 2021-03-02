@@ -18,6 +18,9 @@ from .utils.logger import Logger
 
 import pushcollector
 
+from unittest import mock
+
+
 CLI_DESCRIPTION = ""
 
 
@@ -59,7 +62,6 @@ def push_docker(push_items, signing_key, hub, task_id, target_name, target_setti
         target_settings (dict)
             Target settings
     """
-    log_push_items(signing_key, items=push_items)
     shared_data = {}
     logger = Logger()
     common_external_res = {
@@ -180,7 +182,6 @@ def push_docker(push_items, signing_key, hub, task_id, target_name, target_setti
         stepper.run(start_from=-1)
         raise
     finally:
-        log_push_items(signing_key, items=push_items)
         results = stepper.dump()
         json_io = BytesIO(str(json.dumps(results) + "\n").encode("utf-8"))
         hub.upload_task_log(json_io, task_id, "report.json")
@@ -192,3 +193,12 @@ def mod_entry_point(push_items, hub, task_id, target_name, target_settings):
     return push_docker(
         push_items, "signing-key", hub, task_id, target_name, target_settings
     )
+
+def mocked_mod_entry_point(push_items, hub, task_id, target_name, target_settings):
+    """Mocked entry point for use in testing in another code"""
+    isodate_now = [0]
+    with mock.patch("pubtools._quay.utils.stepper.isodate_now") as patched_isodate_now:
+        patched_isodate_now.side_effect = lambda: [isodate_now.__setitem__(0, isodate_now[0] + 1), isodate_now][0]
+        return push_docker(
+            push_items, "signing-key", hub, task_id, target_name, target_settings
+        )
