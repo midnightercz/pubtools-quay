@@ -1,0 +1,26 @@
+# requests==2.18.4
+https://files.pythonhosted.org/packages/49/df/50aa1999ab9bde74656c2919d9c0c085fd2b3775fd3eca826012bef76d8c/requests-2.18.4-py2.py3-none-any.whl
+# decorator==4.4.2
+https://files.pythonhosted.org/packages/ed/1b/72a1821152d07cf1d8b6fce298aeb06a7eb90f4d6d41acec9861e7cc6df0/decorator-4.4.2-py2.py3-none-any.whl
+# PyNaCl==1.0.1
+https://files.pythonhosted.org/packages/dd/99/bc86d40c88c1e1c6c9338d5afa91e3126d1ae28ad1bdfac79ab5b01803df/PyNaCl-1.0.1.tar.gz
+# gssapi==1.5.1
+https://files.pythonhosted.org/packages/f7/17/1a316f0c6a1b802a9b4d6253068b4a3756cfef19fbd43d9747839d98ff30/gssapi-1.5.1.tar.gz
+# ndg-httpsclient==0.4.4
+https://files.pythonhosted.org/packages/fb/ab/8a8a0715eb71607eb0aefdca68a688041ca1dd92f8e049b962092fa5e513/ndg_httpsclient-0.4.4-py2-none-any.whl
+# edgegrid-python==1.0.10
+https://files.pythonhosted.org/packages/d2/f8/92732a036eb58efdacb093f5158e61782ae19958cea8942fb54247f788f2/edgegrid-python-1.0.10.tar.gz
+# cryptography==2.1.4
+https://files.pythonhosted.org/packages/78/c5/7188f15a92413096c93053d5304718e1f6ba88b818357d05d19250ebff85/cryptography-2.1.4.tar.gz
+# idna==2.7
+https://files.pythonhosted.org/packages/4b/2a/0276479a4b3caeb8a8c1af2f8e4355746a97fab05a372e4a2c6a6b876165/idna-2.7-py2.py3-none-any.whl
+# paramiko==2.3.1
+https://files.pythonhosted.org/packages/02/be/c171008f38c03e121f6e09dda662ba213c8ef1bf4796ddd8c4e22c192d95/paramiko-2.3.1-py2.py3-none-any.whl
+# PyYAML < 5.1
+https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz
+# jsonschema == 2.3.0
+https://files.pythonhosted.org/packages/20/1c/52812523feebd744ac0e268224b5bae048b1559c88728f3628d169427947/jsonschema-2.3.0-py2.py3-none-any.whl
+# pyrsistent==0.13.0
+https://files.pythonhosted.org/packages/47/48/868fb9ac1673bb4d1c6d12b8a7b1dc98080e80be41a4c03e89717cc55a38/pyrsistent-0.13.0.tar.gz
+
+# -e git+https://code.engineering.redhat.com/gerrit/rhmsg#egg=rhmsg-0.9
