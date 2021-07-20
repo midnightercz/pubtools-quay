@@ -34,6 +34,11 @@ class Tox(TestCommand):
         sys.exit(errno)
 
 
+if (sys.version_info[0], sys.version_info[1], sys.version_info[2]) == (2, 6, 6):
+    REQUIREMENTS_FNAME = 'requirements-py26.txt'
+else:
+    REQUIREMENTS_FNAME = 'requirements.txt'
+
 def read_content(filepath):
     with open(filepath) as fobj:
         return fobj.read()
@@ -63,7 +68,7 @@ def get_requirements():
     Regex extracts name and url from a tox-compatible format, and replaces it with only a name
     (which will be combined with dependency_links) or with PEP-508 compatible dependency.
     """
-    with open("requirements.txt") as f:
+    with open(REQUIREMENTS_FNAME) as f:
         reqs = f.read().splitlines()
     # If we are building an RPM, we don't have pip available, and we want
     # to use the 'name + dependency_link' style
@@ -87,7 +92,7 @@ def get_dependency_links():
     """
     Extracts only depenency links for the dependency_links in older versions of pip.
     """
-    with open("requirements.txt") as f:
+    with open(REQUIREMENTS_FNAME) as f:
         reqs = f.read().splitlines()
     dependency_links = []
     for req in reqs:
